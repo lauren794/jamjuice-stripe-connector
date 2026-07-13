@@ -5,10 +5,14 @@ const app = express();
 
 app.use(express.json());
 
-// Check that the Stripe key exists
+// Check environment variables
 const stripeKey = process.env.STRIPE_SECRET_KEY;
 
 if (!stripeKey) {
+  console.log("=== Environment Variables Available ===");
+  console.log(Object.keys(process.env).sort());
+  console.log("======================================");
+
   console.error("❌ STRIPE_SECRET_KEY environment variable is missing.");
   process.exit(1);
 }
@@ -95,7 +99,6 @@ app.post("/mcp", async (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 
-// Listen on all network interfaces for Railway
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`✅ Stripe MCP running on port ${PORT}`);
 });
