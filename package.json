@@ -1,14 +1,13 @@
 {
-  "name": "stripe-mcp-server",
+  "name": "jamjuice-stripe-mcp",
   "version": "1.0.0",
   "type": "module",
   "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "latest",
-    "dotenv": "^16.4.7",
-    "express": "^4.19.2",
-    "stripe": "^18.4.0"
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "stripe": "^18.2.1",
+    "express": "^5.1.0"
   }
 }
